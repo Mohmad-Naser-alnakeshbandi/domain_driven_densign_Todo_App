@@ -7,9 +7,7 @@ Content-Type: application/json
 
 ```json
 {
-    "todo_id": 1,
     "content": "I want to go the school",
-    "created_at": "2023-08-03 16:39:32.140401",
     "status": "Not started"
 }
 ```
