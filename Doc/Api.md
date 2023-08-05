@@ -53,7 +53,7 @@ Accept: application/json
 ## Modify the status of a Todo Task
 
 ```Http
-PUT 127.0.0.1:5000/todos/1
+PUT http://127.0.0.1:5000/todos/1
 Content-Type: application/json
 ```
 
@@ -66,7 +66,7 @@ Content-Type: application/json
 ### Delete a Todo Task from the database
 
 ```Http
-DELETE 127.0.0.1:5000/todos
+DELETE http://127.0.0.1:5000/todos
 Content-Type: application/json
 ```
 ```json
