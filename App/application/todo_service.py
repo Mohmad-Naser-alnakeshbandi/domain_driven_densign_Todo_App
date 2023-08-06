@@ -1,6 +1,6 @@
-# app/services/todo_service.py
-from app.models.todo import Todo
-from app.repositories.todo_repository import TodoRepository
+# App/services/todo_service.py
+from App.models.todo import Todo
+from App.repositories.todo_repository import TodoRepository
 
 
 class TodoService:

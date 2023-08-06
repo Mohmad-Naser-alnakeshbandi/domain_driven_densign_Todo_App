@@ -1,8 +1,8 @@
-# app/controllers/todo_controller.py
+# App/controllers/todo_controller.py
 from flask import Flask, jsonify, request
-from app.services.todo_service import TodoService
-from app.repositories.todo_repository import TodoRepository
-from app.database import db_path
+from App.application.todo_service import TodoService
+from App.infrastructure.todo_repository import TodoRepository
+from App.database import db_path
 
 app = Flask(__name__)
 todo_repo = TodoRepository(db_path)

@@ -1,8 +1,8 @@
-# app/repositories/todo_repository.py
+# App/repositories/todo_repository.py
 import sqlite3
 from typing import List
 
-from app.models.todo import Todo
+from App.domain.todo import Todo
 
 
 class TodoRepository:
