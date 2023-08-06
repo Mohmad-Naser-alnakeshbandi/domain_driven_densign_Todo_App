@@ -1,4 +1,4 @@
-# App/models/todo.py
+# App/domain/todo.py
 from dataclasses import dataclass
 from datetime import datetime
 

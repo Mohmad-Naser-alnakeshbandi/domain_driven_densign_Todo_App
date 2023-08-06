@@ -2,7 +2,7 @@
 import os
 import sqlite3
 
-db_path = "todo_app.db"
+db_path = "./todo_app.db"
 
 if not os.path.exists(db_path):
     with sqlite3.connect(db_path) as conn:
