@@ -2,6 +2,6 @@ POST http://127.0.0.1:5000/todos
 Content-Type: application/json
 
 {
-    "content": "Spend some time with the family",
+    "content": "play csgo",
     "status": "Not started"
 }

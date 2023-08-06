@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="add_a_todo_task_class">
+    <label for="todo_text_input">Task content:</label>
+    <input type="text" id="todo_text_input" required>
+    <button onclick="add_a_todo()" type="submit">Add a new Task</button>
+</div>
+
+{% for item in tasks %}
+    <div class="item">
+        <p> {{ item.created_at }}</p>
+        <p>{{ item.content }}</p>
+
+            {% if item.status == "Not started" %}
+                <select id="todo_status" onchange="change_todo_status({{ item.id }})">
+                    <option value="Not started" selected>Not started</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Done">Done</option>
+                </select>
+            {% endif %}
+
+            {% if item.status == "In Progress" %}
+                <select id="todo_status" onchange="change_todo_status({{ item.id }})">
+                    <option value="Not started">Not started</option>
+                    <option value="In Progress" selected>In Progress</option>
+                    <option value="Done">Done</option>
+                </select>
+            {% endif %}
+
+            {% if item.status == "Done" %}
+                <select id="todo_status" onchange="change_todo_status({{ item.id }})">
+                    <option value="Not started">Not started</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Done" selected>Done</option>
+                </select>
+            {% endif %}
+
+        <button onclick="delete_a_todo({{ item.id }})">Delete a todo task</button>
+    </div>
+
+
+{% endfor %}
+
+    <form id="todo_form"></form>
+</body>
+</html>

@@ -1,5 +1,5 @@
 # App/presentation/todo_controller.py
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from App.application.todo_service import TodoService
 from App.infrastructure.todo_repository import TodoRepository
 from App.infrastructure.database import db_path
@@ -8,17 +8,20 @@ app = Flask(__name__)
 todo_repo = TodoRepository(db_path)
 todo_service = TodoService(todo_repo)
 
+
+@app.route('/', methods=['GET'])
+def get_all_todo():
+    all_todos = todo_service.get_all_todos()
+    return render_template('index.html',tasks=all_todos)
+
 @app.route('/todos', methods=['POST'])
 def add_a_todo():
     content = request.json['content']
     status = request.json['status']
     todo_service.add_todo(content,status)
+    get_all_todo()
     return jsonify({"message": "Todo added successfully!"}), 201
 
-@app.route('/todos', methods=['GET'])
-def get_all_todo():
-    all_todos = todo_service.get_all_todos()
-    return jsonify(all_todos), 200
 
 @app.route('/todos/<int:todo_id>', methods=['PUT'])
 def update_a_todo_status(todo_id: int):
