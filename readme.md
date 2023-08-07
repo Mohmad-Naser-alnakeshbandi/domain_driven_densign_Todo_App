@@ -1,4 +1,4 @@
-# TODO App based on the Domain Driven Design (DDD)
+# TODO App based on the Domain Driven Design (DDD) - Onion architecture 
 
 ## Techstack :
 
@@ -9,7 +9,7 @@
 - CSS
 - Jinja
 
-## The Backend - API documentation
+## The backend - API documentation
 
 ### Add a new Todo Task to the database
 
@@ -70,7 +70,7 @@ Content-Type: application/json
 
 ```json
 {
-        "status": "In Progress"
+  "status": "In Progress"
 }
 ```
 
@@ -85,3 +85,39 @@ Content-Type: application/json
     "id": 1
 }
 ```
+
+## The frontend 
+
+The start of the application:
+
+<img src="Doc/start.png">
+
+Press the "Add a new Task" button to add a todo task:
+
+<img src="Doc/Add_a_todo_task.png">
+
+Use the combobox to update the todo task from:
+
+- Not started
+
+into: 
+
+- In Progress 
+- Done
+
+<img src="Doc/Update_and_Delete_a_Todo_Task.png">
+
+or if you want to delete the todo task, just press the "Delete a todo task" button
+
+## What is missing:
+
+- validation 
+- Exceptions
+
+## How to install it: 
+
+Just run:
+
+````
+    pip install -r requirements.txt
+````
